@@ -1,4 +1,8 @@
 function FindProxyForURL(url, host) 
 {
-    return "PROXY 192.168.0.199:8080";
+    if (dnsDomainIs(host, "japantaxfree.com")) {
+        return "DIRECT";
+    } else {
+        return "PROXY 192.168.0.199:8080";
+    }
 }
